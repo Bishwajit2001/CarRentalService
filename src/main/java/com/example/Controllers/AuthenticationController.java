@@ -78,6 +78,7 @@ public class AuthenticationController {
 	    user.setName(name);
 	    user.setUsername(username);
 	    user.setPassword(passwordEncoder.encode(password)); 
+		user.setPhoneNumber(phoneNumber);
 
 	    try {
 	        repo.save(user);
