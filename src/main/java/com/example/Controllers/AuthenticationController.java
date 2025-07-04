@@ -70,7 +70,7 @@ public class AuthenticationController {
 	    @RequestParam String name,
 	    @RequestParam String username,
 	    @RequestParam String password,
-	    @RequestParam long phoneNumber
+	    @RequestParam String phoneNumber
 	) {
 	    System.out.println("======> Inside SignUp Handler");
 
