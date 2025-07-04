@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contact Us</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            background: radial-gradient(circle at top left, #141E30, #243B55); /* same as submitted */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            animation: floatIn 0.8s ease-out;
+        }
+
+        @keyframes floatIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        label {
+            font-size: 16px;
+            color: #dddddd;
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            resize: vertical;
+            margin-bottom: 20px;
+        }
+
+        textarea::placeholder {
+            color: #cccccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(to right, #00c6ff, #0072ff); /* blue button */
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Contact Us</h2>
+        <form action="/contact/submit" method="post">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Please type your message/feedback..." required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+</body>
+</html>

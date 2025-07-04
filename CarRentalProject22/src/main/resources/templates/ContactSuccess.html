@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contact Submitted</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            background: radial-gradient(circle at top left, #141E30, #243B55); /* dark gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            animation: floatIn 0.8s ease-out;
+        }
+
+        @keyframes floatIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+            color: #dddddd;
+        }
+
+        em {
+            color: #f1c40f;
+            font-style: italic;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 24px;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: transform 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        a:hover {
+            transform: scale(1.05);
+        }
+
+       
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+       
+        <h2>Message Sent Successfully!</h2>
+
+        <p>Thank you, <span th:text="${contact.user.name}">User</span>, for reaching out to us.</p>
+        <p>Your message: <em th:text="${contact.message}">"Your message here"</em></p>
+        <p>Submitted on: <span th:text="${contact.localdatetime}">2025-07-03 19:25</span></p>
+
+        <a href="/dashboard">⬅ Back to Dashboard</a>
+    </div>
+
+</body>
+</html>
