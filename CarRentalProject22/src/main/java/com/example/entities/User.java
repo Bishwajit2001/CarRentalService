@@ -19,7 +19,8 @@ public class User {
 	@Column(unique=true)
 	private String username;
 	private String password;
-	private long phoneNumber;
+	@Column
+	private String phoneNumber;
 	public String getName() {
 		return name;
 	}
@@ -38,13 +39,13 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public long getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(long phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public User(String name, String username, String password, long phoneNumber) {
+	public User(String name, String username, String password, String phoneNumber) {
 		super();
 		this.name = name;
 		this.username = username;
